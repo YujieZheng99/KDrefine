@@ -3,7 +3,7 @@
 
 ## Installation
 
-This repo was tested with Ubuntu 20.04.5 LTS, Python 3.5, PyTorch 0.4.0, and CUDA 10.2. But it should be runnable with recent PyTorch versions >=0.4.0
+This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0,Torchvision 0.10.0 and CUDA 10.2.
 
 ## Running
 
@@ -64,7 +64,7 @@ Performance is measured by classification accuracy (%)
 |         FSP          |         72.91          |          N/A           |         69.95          |          70.11          |          71.89          |           72.62           |      70.23       |
 |         NST          |         73.68          |         72.24          |         69.60          |          69.53          |          71.96          |           73.30           |      71.53       |
 |       **CRD**        |       **75.48**        |       **74.14**        |       **71.16**        |        **71.46**        |        **73.48**        |         **75.51**         |    **73.94**     |
-|    **RepKD**    |         **-**          |         **-**          |       **72.06**        |        **71.99**        |        **74.08**        |           **-**           |    **74.70**     |
+
 2. Teacher and student are of **different** architectural type.
 
 | Teacher <br> Student | vgg13 <br> MobileNetV2 | ResNet50 <br> MobileNetV2 | ResNet50 <br> vgg8 | resnet32x4 <br> ShuffleNetV1 | resnet32x4 <br> ShuffleNetV2 | wrn-40-2 <br> ShuffleNetV1 |
@@ -82,7 +82,7 @@ Performance is measured by classification accuracy (%)
 |          FT          |         61.78          |           60.99           |       70.29        |            71.75             |            72.50             |           72.03            |
 |         NST          |         58.16          |           64.96           |       71.28        |            74.12             |            74.68             |           74.89            |
 |       CRD        |       **69.73**        |         69.11         |     74.30     |          **75.11**           |          **75.65**           |         **76.05**          |
-|    **RepKD**    |       68.90        |         **69.60**         |     **74.88**      |            **-**             |            **-**             |           **-**            |
+
 
 
 
