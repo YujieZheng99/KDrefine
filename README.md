@@ -3,7 +3,7 @@
 
 ## Installation
 
-This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0,Torchvision 0.10.0 and CUDA 10.2.
+This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvision 0.10.0 and CUDA 10.2.
 
 ## Running
 
