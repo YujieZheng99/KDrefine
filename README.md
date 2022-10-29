@@ -7,17 +7,17 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
 
 ## Running
 
-1. Fetch the pretrained teacher models by:
+1. Fetch the pretrained teacher models:
 
     ```
     sh scripts/fetch_pretrained_teachers.sh
     ```
    which will download and save the models to `save/models`
    
-2. Run distillation by following commands in `scripts/run_cifar_distill.sh`. An example of running Geoffrey's original Knowledge Distillation (KD) is given by:
+2. An example of running KDrefine is given by:
 
     ```
-    python train_student.py --path_t ./save/models/resnet32x4_vanilla/ckpt_epoch_240.pth --distill kd --model_s resnet8x4 -r 0.1 -a 0.9 -b 0 --trial 1
+    python train_student.py --path_t ./save/models/resnet110_vanilla/ckpt_epoch_240.pth --distill kdrefine --model_s represnet20  -r 0.1 -a 0.9 -b 0 --trial 1
     ```
     where the flags are explained as:
     - `--path_t`: specify the path of the teacher model
@@ -28,15 +28,16 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
     - `-b`: the weight of other distillation losses, default: `None`
     - `--trial`: specify the experimental id to differentiate between multiple runs.
     
-    Therefore, the command for running CRD is something like:
-    ```
-    python train_student.py --path_t ./save/models/resnet32x4_vanilla/ckpt_epoch_240.pth --distill crd --model_s resnet8x4 -a 0 -b 0.8 --trial 1
-    ```
     
-3. Combining a distillation objective with KD is simply done by setting `-a` as a non-zero value, which results in the following example (combining CRD with KD)
-    ```
-    python train_student.py --path_t ./save/models/resnet32x4_vanilla/ckpt_epoch_240.pth --distill crd --model_s resnet8x4 -a 1 -b 0.8 --trial 1     
-    ```
+3. validation
+
+Our models are at https://github.com/YujieZheng99/KDrefine/releases/tag/checkpoints
+
+You can evaluate the performance of our models or models trained by yourself.
+
+```
+python validation.py --model represnet20 --model_path save/student_model/resnet110_2_resnet20_deploy_72.13.pth --blocktype ACTDB --deploy_flag True
+```
 
 4. (optional) Train teacher networks from scratch. Example commands are in `scripts/run_cifar_vanilla.sh`
 
