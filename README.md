@@ -41,7 +41,6 @@ python validation.py --model represnet20 --model_path save/student_model/resnet1
 
 4. (optional) Train teacher networks from scratch. Example commands are in `scripts/run_cifar_vanilla.sh`
 
-Note: the default setting is for a single-GPU training. If you would like to play this repo with multiple GPUs, you might need to tune the learning rate, which empirically needs to be scaled up linearly with the batch size, see [this paper](https://arxiv.org/abs/1706.02677)
 
 ## Benchmark Results on CIFAR-100:
 
@@ -62,5 +61,6 @@ We report the accuracy of last epoch and all results are average over 5 trials.
 |          FT          |         69.84          |          70.22          |          72.37          |       70.58       |       61.78          |           60.99           |       70.29        |
 |         FSP          |         69.95          |          70.11          |          71.89          |       70.23       |         \            |              \        |                 \      |
 |         NST          |         69.60          |          69.53          |          71.96          |       71.53       |       58.16          |           64.96           |       71.28        |
-|       **CRD**        |       **71.16**        |        **71.46**        |        **73.48**        |     **73.94**     |     **69.73**        |         **69.11**         |     **74.30**      |
+|       CRD            |         71.16          |          71.46          |          73.48          |       73.94       |     **69.73**        |           69.11           |       74.30        |
+| **KDrefine**         |       **71.81**        |        **71.99**        |        **74.08**        |     **74.70**     |       68.90          |         **69.60**         |     **74.88**      |
 
