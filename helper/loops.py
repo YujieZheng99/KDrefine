@@ -134,7 +134,7 @@ def train_distill(epoch, train_loader, module_list, criterion_list, optimizer, o
         # other kd beyond KL divergence
         if opt.distill == 'kd':
             loss_kd = 0
-        elif opt.distill == 'repkd':
+        elif opt.distill == 'kdrefine':
             loss_kd = 0
         elif opt.distill == 'semckd':
             s_value, f_target, weight = module_list[1](feat_s[1:-1], feat_t[1:-1])
