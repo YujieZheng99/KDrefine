@@ -23,6 +23,7 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
 | torch | 1.8.0+cu111 | 1.8.0+cu111 |
 | torchvision | 0.9.0+cu111 | 0.9.0+cu111 |
 | tqdm | 4.65.0 | 4.66.1 | 
+
 ```
 pip install -r requirements.txt
 ```****
