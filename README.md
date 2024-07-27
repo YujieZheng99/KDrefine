@@ -6,9 +6,7 @@
 This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvision 0.10.0 and CUDA 10.2.
 
 | Package | Version (CIFAR) | Version (ImageNet) |
-
 | ------ | ------ | ------ |
-
 | h5py | 3.11.0 | 3.11.0 |
 | lmdb | 1.4.1 | 1.4.1 |
 | matplotlib | 3.5.3 | 3.9.0 |
@@ -26,7 +24,7 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
 
 ```
 pip install -r requirements.txt
-```****
+```
 
 ## Running
 
