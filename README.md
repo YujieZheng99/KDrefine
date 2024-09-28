@@ -14,7 +14,7 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
     sh scripts/fetch_pretrained_teachers.sh
     ```
    which will download and save the models to `save/models`
-   
+
 2. An example of running KDrefine is given by:
 
     ```
