@@ -22,6 +22,7 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
     ```
     
 3.Equivalent structural transformation:
+
     ```
     python convert.py --arch represnet20 --blocktype AMBB --load `save/student_model/represnet20_last.pth` --save `save/student_model/represnet20_deploy.pth`
     ```
