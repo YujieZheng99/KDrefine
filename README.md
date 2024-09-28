@@ -18,29 +18,23 @@ This repo was tested with Ubuntu 20.04.4 LTS, Python 3.6, PyTorch 1.9.0, Torchvi
 2. An example of running KDrefine is given by:
 
     ```
-    python train_student.py --path_t ./save/models/resnet110_vanilla/ckpt_epoch_240.pth --distill kdrefine --model_s represnet20  -r 0.1 -a 0.9 -b 0 --trial 1
+    python train_student.py --path_t ./save/models/resnet110_vanilla/ckpt_epoch_240.pth --distill kdrefine --model_s represnet20 --blocktype AMBB  -r 0.1 -a 0.9 -b 0 --trial 1
     ```
-    where the flags are explained as:
-    - `--path_t`: specify the path of the teacher model
-    - `--model_s`: specify the student model, see 'models/\_\_init\_\_.py' to check the available model types.
-    - `--distill`: specify the distillation method
-    - `-r`: the weight of the cross-entropy loss between logit and ground truth, default: `1`
-    - `-a`: the weight of the KD loss, default: `None`
-    - `-b`: the weight of other distillation losses, default: `None`
-    - `--trial`: specify the experimental id to differentiate between multiple runs.
     
+3.Equivalent structural transformation:
+    ```
+    python convert.py --arch represnet20 --blocktype AMBB --load `save/student_model/represnet20_last.pth` --save `save/student_model/represnet20_deploy.pth`
+    ```
     
-3. validation
+4. validation
 
-Our models are at https://github.com/YujieZheng99/KDrefine/releases/tag/checkpoints
+    Our models are at https://github.com/YujieZheng99/KDrefine/releases/tag/checkpoints
 
-You can evaluate the performance of our models or models trained by yourself.
+    You can evaluate the performance of our models or models trained by yourself.
 
-```
-python validation.py --model represnet20 --model_path save/student_model/resnet110_2_resnet20_deploy_72.13.pth --blocktype ACTDB --deploy_flag True
-```
-
-4. (optional) Train teacher networks from scratch. Example commands are in `scripts/run_cifar_vanilla.sh`
+    ```
+    python validation.py --model represnet20 --model_path save/student_model/resnet110_2_resnet20_deploy_72.13.pth --blocktype AMBB --deploy_flag True
+    ```
 
 
 ## Benchmark Results on CIFAR-100:
